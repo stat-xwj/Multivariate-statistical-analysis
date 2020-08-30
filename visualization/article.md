@@ -360,3 +360,7 @@ fig + geom_point(size = 2)
 
 
 
+完整代码及数据见：https://github.com/stat-xwj/Multivariate-statistical-analysis/tree/master/visualization
+
+
+
