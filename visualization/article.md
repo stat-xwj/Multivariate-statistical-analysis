@@ -24,7 +24,7 @@ fig+geom_bar( )
 
 
 ### 1.2 直方图
-类似于柱状图，直方图能更加清晰地看到数据的分布情况，同样对所有样本的挥发性酸度(volatile.acidity)作直方图同时加上密度估计：
+类似于柱状图，直方图能更加清晰地呈现数据的分布情况，同样对所有样本的挥发性酸度(volatile.acidity)作直方图同时加上密度估计：
 ```R
 fig = ggplot(data = winedata, 
              mapping = aes(x=volatile.acidity))
@@ -38,7 +38,7 @@ fig + geom_histogram(mapping = aes(y = ..density..), alpha = 0.6)+
 
 
 ### 1.3 饼图
-饼图通常能直观地反映离散数据的占比情况，对所有样本的种类(type)作饼图可得：
+饼图通常能直观地反映离散数据的类别占比情况，对所有样本的种类(type)作饼图可得：
 ```R
 # ggplot2 中饼图是先做出条形图，再极坐标变换得到的
 fig = ggplot(data = winedata, 
@@ -98,7 +98,7 @@ fig + geom_col(position = "fill") + labs(y = NULL)
 
 ![](https://cdn.jsdelivr.net/gh/stat-xwj/weixin/2020-8-31/1598861345235-分组柱状2.png)
 
-![红葡萄酒的品质较低，白葡萄酒质量较高](https://cdn.jsdelivr.net/gh/stat-xwj/weixin/2020-8-31/1598861372574-分组柱状3.png)
+![红葡萄酒的品质较低，白葡萄酒品质较高](https://cdn.jsdelivr.net/gh/stat-xwj/weixin/2020-8-31/1598861372574-分组柱状3.png)
 
 ### 2.3 分组直方图(二维)
 作出两种葡萄酒下样本的PH值分布情况：
@@ -123,7 +123,7 @@ fig + geom_line(size = 1.2, stat = "density")
 ```
 
 
-![随着平值增高，分布曲线逐渐具有厚尾现象，品质最高的一类酒具有双峰](https://cdn.jsdelivr.net/gh/stat-xwj/weixin/2020-8-31/1598861559442-分组直方图2.png)
+![随着品质增高，分布曲线逐渐具有厚尾现象，品质最高的一类酒具有双峰](https://cdn.jsdelivr.net/gh/stat-xwj/weixin/2020-8-31/1598861559442-分组直方图2.png)
 
 ### 2.4 箱线图(二维)
 对全体样本不同品质(quality)下作其固定酸度(fixed.adidity)的箱线图:
@@ -138,7 +138,7 @@ fig + geom_boxplot()
 
 
 ### 2.5 分组散点图(三维)
-作出不同类型(type)的葡萄酒固定酸度(fixed.acidity)和挥发酸度(volatile.acidity)作交互散点图可得：
+对不同类型(type)的葡萄酒固定酸度(fixed.acidity)和挥发酸度(volatile.acidity)作交互散点图可得：
 
 ```R
 fig = ggplot(data = winedata, 
