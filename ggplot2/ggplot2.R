@@ -94,7 +94,8 @@ ggplot(data = winedata, aes(x = fixed.acidity,
 ggplot(data = winedata, aes(x = fixed.acidity, 
                             y = volatile.acidity)) + 
   geom_point(size = 3, aes(color = type, shape = type)) + 
-  scale_color_manual(values = c("#E69F00", "#999999"), labels=c("red wine", "white wine")) + 
+  scale_color_manual(values = c("#E69F00", "#999999"), 
+                     labels=c("red wine", "white wine")) + 
   scale_shape_manual(values = c(15, 19), labels=c("red wine", "white wine")) + 
   labs(x = 'concentration of fixed.acidity', 
        y = 'concentration of violatile.acidity', 
@@ -161,7 +162,8 @@ ggplot(data = winedata, aes(x = fixed.acidity,
 # 二 直方图
 ggplot(data = winedata, 
        aes(x = volatile.acidity)) + 
-  geom_histogram(bins = 50, alpha = 0.6, fill = 'steelblue', colour = 'black')
+  geom_histogram(bins = 50, alpha = 0.6, fill = 'steelblue', 
+                 colour = 'black')
 
 
 
@@ -210,6 +212,7 @@ library(lubridate)
 
 x = load_nCov2019()
 data_province = summary(x)
+head(data_province)
 data_province = data.frame(time = data_province$time,  
                            NAME = data_province$province, 
                            cum_confirm = data_province$cum_confirm)
@@ -223,6 +226,7 @@ data_province$Group = cut(data_province$cum_confirm,
                           include.lowest = TRUE, 
                           right = TRUE) 
 head(data_province)
+tail(data_province)
 
 # ymd 将字符串解析为时间
 startTime = ymd("2019-12-01")
@@ -231,6 +235,7 @@ endTime = date(nowTime) - ddays(2)
 timeLength = interval(startTime, endTime) %>% time_length("day")
 mytime = startTime + ddays(0:timeLength)
 mytime
+
 
 # 地图
 setwd('C:\\Users\\xiawenjun\\Desktop\\助教\\Multivariate-statistical-analysis\\ggplot2\\china_basic_map')
