@@ -39,8 +39,8 @@ doc_tdm = TermDocumentMatrix(doc_corpus, control)
 word_matrix = t(as.matrix(doc_tdm) )      #词文本矩阵，即这个词在某个文本中出现的次数 
 
 ncol(word_matrix); nrow(word_matrix)
-word_matrix[1:3, 1:3]
-
+word_matrix[1:3, 1:6]
+nrow(word_matrix);ncol(word_matrix)
 
 # 绘制词云
 wordCloudPlot = function(word_matrix){
