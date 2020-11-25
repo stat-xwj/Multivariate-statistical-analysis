@@ -52,7 +52,7 @@ table(results, c(rep(1, nrow(classX1)),rep(2, nrow(classX2))))
 source("distinguish.distance.R")
 X<-iris[,1:4]
 G<-gl(3,50)
-results = distinguish.distance(X,G)
+results = distinguish.distance(X,G,var.equal = T)
 table(results, G)
 
 
@@ -68,7 +68,7 @@ TrnX2<-matrix(
   ncol=2)
 source("discriminiant.bayes.R")
 #### 样本协方差相同
-results = discriminiant.bayes(TrnX1, TrnX2, rate=8/6, var.equal=TRUE)
+results = discriminiant.bayes(TrnX1, TrnX2, rate=8/6)
 table(results, c(rep(1, nrow(TrnX1)),rep(2, nrow(TrnX2))))
 
 #### 样本协方差不同
@@ -80,7 +80,7 @@ table(results, c(rep(1, nrow(TrnX1)),rep(2, nrow(TrnX2))))
 X<-iris[,1:4]
 G<-gl(3,50)
 source("distinguish.bayes.R")
-results = distinguish.bayes(X,G)
+results = distinguish.bayes(X,G, var.equal = T)
 table(results, G)
 
 
